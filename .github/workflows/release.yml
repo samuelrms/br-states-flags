@@ -37,7 +37,7 @@ jobs:
       - name: Commit changes
         run: |
           git add -A
-          git commit -m "chore: release new version"
+          git commit -m "chore: release new version" || true
 
       - name: Publish to npm
         run: npm publish --access public
