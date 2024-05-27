@@ -1,5 +1,3 @@
-import * as fs from "fs";
-import * as path from "path";
 import { allCountriesWorld } from "./country";
 
 type State = {
@@ -38,10 +36,36 @@ const estados: State[] = [
   { id: "TO", name: "Tocantins" },
 ];
 
+const importFlag = (id: string): string => {
+  if (typeof window !== "undefined") {
+    try {
+      return require(`../flags/${id}.svg`).default;
+    } catch (err) {
+      console.error(`Erro ao importar a bandeira ${id}:`, err);
+      return "";
+    }
+  } else {
+    const fs = require("fs");
+    const path = require("path");
+    try {
+      const flagPath = path.join(
+        __dirname,
+        "..",
+        "public",
+        "flags",
+        `${id}.svg`
+      );
+      return fs.readFileSync(flagPath, "utf8");
+    } catch (err) {
+      console.error(`Erro ao ler a bandeira ${id}:`, err);
+      return "";
+    }
+  }
+};
+
 const flagStates = (): State[] => {
   return estados.map((estado) => {
-    const flagPath = path.join(__dirname, "..", "flags", `${estado.id}.svg`);
-    const flag = fs.readFileSync(flagPath, "utf8");
+    const flag = importFlag(estado.id);
     return { ...estado, flag };
   });
 };
@@ -55,8 +79,7 @@ const statesWithoutFlags = (): Omit<State, "flag">[] => {
 
 const onlyFlags = (): { id: string; flag: string }[] => {
   return estados.map((estado) => {
-    const flagPath = path.join(__dirname, "..", "flags", `${estado.id}.svg`);
-    const flag = fs.readFileSync(flagPath, "utf8");
+    const flag = importFlag(estado.id);
     return { id: estado.id, flag };
   });
 };
