@@ -20,25 +20,10 @@ jobs:
           git config --global push.default simple
           git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/samuelrms/br-states-flags.git
 
-      - name: Check if release branch exists
-        run: |
-          if ! git ls-remote --exit-code --heads origin release; then
-            git checkout -b release
-            git push -u origin release
-          fi
-
-      - name: Create temporary branch
-        run: git checkout -b release
-
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "16"
-
-      - name: Configure Git
-        run: |
-          git config --global user.email "samuelaoliveiraramos@gmail.com"
-          git config --global user.name "Samuel Ramos"
+          node-version: 20
 
       - name: Configure npm authentication
         run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
@@ -54,11 +39,5 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v3
-        with:
-          branch: release
-          base: main
-          title: "Release updates"
-          body: "This pull request includes version updates and release changes."
-          token: ${{ secrets.GH_TOKEN }}
+      - name: Push changes
+        run: git push origin main
