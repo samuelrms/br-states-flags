@@ -47,4 +47,4 @@ jobs:
           base: release
           title: "Release updates"
           body: "This pull request includes version updates and release changes."
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GH_TOKEN }}
