@@ -4,6 +4,8 @@ Uma solução simples para um problema cotidiano, essa biblioteca possui um reto
 
 A simple solution for an everyday problem, this library provides a return with all Brazilian states, including their names, abbreviations, and SVG flags.
 
+[![Release](https://github.com/samuelrms/br-states-flags/actions/workflows/release.yml/badge.svg)](https://github.com/samuelrms/br-states-flags/actions/workflows/release.yml)
+
 ## Índice / Table of Contents
 
 - [br-states-flags-and-countries](#br-states-flags-and-countries)
