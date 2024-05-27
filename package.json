@@ -1,6 +1,6 @@
 {
   "name": "br-states-flags-and-countries",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Uma solução simples para um problema cotidiano, essa biblioteca possui um retorno com todos os estados brasileiros, contendo seus nomes, siglas e suas bandeiras em SVG. A simple solution for an everyday problem, this library provides a return with all Brazilian states, including their names, abbreviations, and SVG flags.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

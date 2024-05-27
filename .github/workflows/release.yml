@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "20"
+          node-version: 20
 
       - name: Configure Git
         run: |
@@ -43,8 +43,8 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
-          branch: main
-          base: release
+          branch: release
+          base: main
           title: "Release updates"
           body: "This pull request includes version updates and release changes."
           token: ${{ secrets.GH_TOKEN }}
