@@ -17,8 +17,6 @@ jobs:
         run: |
           git config --global user.email "samuelaoliveiraramos@gmail.com"
           git config --global user.name "Samuel Ramos"
-          git config --global push.default simple
-          git remote set-url origin https://x-access-token:${{ secrets.GH_TOKEN }}@github.com/samuelrms/br-states-flags.git
 
       - name: Setup Node.js
         uses: actions/setup-node@v2
