@@ -1,4 +1,12 @@
-export const allCountriesWorld = [
+export type AllCountriesWorld = {
+  id: number;
+  name: string;
+  initials: string;
+  acronym: string;
+  code: string;
+};
+
+export const allCountriesWorld: AllCountriesWorld[] = [
   {
     id: 1,
     name: "Afeganistão",
