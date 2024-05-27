@@ -1,0 +1,25 @@
+{
+  "name": "br-states-flags",
+  "version": "1.0.6",
+  "description": "Uma solução simples para um problema cotidiano, essa biblioteca possui um retorno com todos os estados brasileiros, contendo seus nomes, siglas e suas bandeiras em SVG",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublishOnly": "npm run build",
+    "build": "tsc",
+    "release": "standard-version"
+  },
+  "keywords": [
+    "brasil",
+    "estados",
+    "bandeiras"
+  ],
+  "author": "Samuel Ramos",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.12",
+    "standard-version": "^9.5.0",
+    "typescript": "^5.4.5"
+  }
+}
