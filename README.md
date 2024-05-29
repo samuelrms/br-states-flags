@@ -24,9 +24,6 @@ Você pode instalar a biblioteca usando npm:
 
 You can install the library using npm:
 
-```bash
-npm install br-states-flags-and-countries
-```
 
 ## Uso / Usage
 
