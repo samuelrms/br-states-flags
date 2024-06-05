@@ -1,4 +1,4 @@
-# br-states-flags-and-countries
+# @country-flags
 
 Uma solução simples para um problema cotidiano, essa biblioteca possui um retorno com todos os estados brasileiros, contendo seus nomes, siglas e suas bandeiras em SVG.
 
@@ -6,7 +6,7 @@ A simple solution for an everyday problem, this library provides a return with a
 
 ## Índice / Table of Contents
 
-- [br-states-flags-and-countries](#br-states-flags-and-countries)
+- [country-flags](#country-flags)
   - [Índice / Table of Contents](#índice--table-of-contents)
   - [Instalação / Installation](#instalação--installation)
   - [Uso / Usage](#uso--usage)
@@ -32,7 +32,7 @@ Aqui está um exemplo de como usar a biblioteca:
 Here is an example of how to use the library:
 
 ```bash
-import { flagStates, onlyFlags, statesWithoutFlags } from 'br-states-flags-and-countries';
+import { flagStates, onlyFlags, statesWithoutFlags } from '@country-flags';
 
 // Obter estados com bandeiras
 const estadosComBandeiras = flagStates();
